@@ -64,7 +64,8 @@ cd fiware-sth-comet/
 After that: npm install
 Start the STH server by running: ./bin/sth
 Set the subscription between Orion Context Broker and STH server(localhost:8866/notify)
-curl -X POST -H "Content-Type: application/json" -H "Accept: application/json" -H "Fiware-Service: XXXXXXX" -H "Fiware-ServicePath: /XXXXXXX"  -d '{
+
+<table>curl -X POST -H "Content-Type: application/json" -H "Accept: application/json" -H "Fiware-Service: XXXXXXX" -H "Fiware-ServicePath: /XXXXXXX"  -d '{
     "entities": [
         {
             "type": "XXXXXX",
@@ -87,7 +88,7 @@ curl -X POST -H "Content-Type: application/json" -H "Accept: application/json" -
     ],
     "throttling": "PT5S"
 }' "http://XXXXXXX/v1/subscribeContext"
-
+</table>
 
 Supervisor
 Installing supervisor
