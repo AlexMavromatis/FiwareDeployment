@@ -25,6 +25,17 @@ sudo service supervisord restart
 
 sed -i "2i #chkconfig: 2345 99 60 " /etc/rc.d/init.d/supervisord
 sed -i "3i #description: supervisord" /etc/rc.d/init.d/supervisord
+
+echo "Initialising supervisor deamons------"
+echo "Iotagent now configured"
+echo "STH now configured"
+sed -i "23i [program:iotagent]" /etc/supervisord.conf
+sed -i "24i command=/opt/iotagent-json/bin/iotagent-json &> /var/log/iotAgent&" /etc/supervisord.conf
+sleep 2
+sed -i "26i [program:STH]" /etc/supervisord.conf
+sed -i "27i command=/opt/fiware-sth-comet/bin/sth" /etc/supervisord.conf
+
+
 sudo chkconfig supervisord on
 
 while true; do
