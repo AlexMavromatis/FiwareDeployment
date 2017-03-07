@@ -20,13 +20,12 @@
 # This is a shell script for deploying fiware IoT stack in Centos 6.6
 # After running this script all the dependencies and the fiware components must be Installed
 # This documents is a property of High Performance Networks Group
-# Author - Alex Mavromatis
 #--------------#
 
+
+
 echo "Welcome to Fiware!!!"
-sleep 3
-
-
+sleep 2
 read -r -p "Are you sure you want to install Fiware? [y/N]" response
 case "$response" in
     [yY][eE][sS]|[yY])
@@ -39,24 +38,20 @@ esac
 
 echo " We are now creating the dependencies ...."
 echo " Setting up enviroment"
-sleep 4
+sleep 2
 
-#yum update Possibly we need to run this to in order to update the dependencies
-#Running these in order to unlock yum
+# yum update Possibly we need to run this in order to update the dependencies
+# Running these in order to unlock yum
+# We need to open the os ports so the iotagent will run properly
 
-
-#We need to open the os ports so the iotagent will run properly
-
-#echo "Opening ports for fiware!"
-echo"------------------------"
+echo "Opening system ports and Initialising iptables for fiware!"
+echo "------------------------"
 sleep 3
-iptables -A INPUT -p tcp --match multiport --dports 0:4041 -j ACCEPT
+sudo iptables -A INPUT -p tcp --match multiport --dports 0:4041 -j ACCEPT
 sudo service iptables save
 sudo service iptables restart
 echo "Done"
 # Opening port for fiware not available yet
-
-
 #---
 # Creating the dependencies for mongodb and orion
 
@@ -72,9 +67,9 @@ yum install git
 sleep 2
 echo "All done"
 
-#sleeping for 15 second so yum lock will be available for the next proccess
+#sleeping for 10 second so yum lock will be available for the next proccess
 echo "Please wait this will take some seconds..."
-sleep 15
+sleep 10
 
 echo "Installing curl"
 yum install curl
@@ -104,9 +99,9 @@ sleep 2
 echo "Done"
 
 
-#sleeping for 15 second so yum lock will be available for the next proccess
+#sleeping for 10 second so yum lock will be available for the next proccess
 echo "Please wait this will take some seconds..."
-sleep 15
+sleep 10
 
 #----------------------
 # Installing orion context broker
@@ -114,7 +109,7 @@ sleep 15
 echo "Installing OrionContextBroker..."
 yum clean all
 sudo yum install contextBroker
-sleep 4
+sleep 2
 /etc/init.d/contextBroker start
 echo "Done"
 
@@ -125,7 +120,7 @@ echo "Creating other dependencies..."
 sleep 2
 curl -sL https://rpm.nodesource.com/setup | bash -
 yum clean all
-sleep 5
+sleep 2
 yum install -y nodejs
 echo "Installing mqtt services..."
 
@@ -137,28 +132,28 @@ gpgcheck=1
 gpgkey= $mosquitto2
 enabled=1" > /etc/yum.repos.d/mosquitto.repo
 
-sleep 4
+sleep 2
 yum install mosquitto
 echo "Mqtt services done..."
 
 yum clean all
 yum install npm
-sleep 4
+sleep 2
 cd /opt
 sudo git clone $iotagentRepo
 cd iotagent-json
 npm install
 
 echo "Iot Agent Installed!!!"
-sleep 5
+sleep 3
 cd ~
 
 #Installing Short Term Historic STH
 #---------------------------------
-
 echo "Installing Short Term Historic"
 git clone $sthRepo
 cd fiware-sth-comet
 npm install
-sleep 3
+
+sleep 4
 echo "All done!"
