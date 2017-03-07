@@ -1,11 +1,11 @@
 # /*************************************************************************
-# 
+#
 #  University of Bristol Confidential
 #  __________________
-#  
-#                                             
+#
+#
 #  All Rights Reserved.
-# 
+#
 #  NOTICE:  All information contained herein is, and remains
 #  the property of University of Bristol and its suppliers,
 #  if any.  The intellectual and technical concepts contained
@@ -16,7 +16,9 @@
 #  is strictly forbidden unless prior written permission is obtained
 #  from University of Bristol.
 #  /
+
+
 echo "Installing packages..."
 yum install $(cat rpm-qa-dump)
-
+echo "Disabling Selinux \n"
 echo "SELINUX=disabled   SELINUXTYPE=targeted" >  /etc/sysconfig/selinux

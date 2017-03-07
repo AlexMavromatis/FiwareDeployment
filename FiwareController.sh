@@ -24,6 +24,16 @@
 #-------------------------------------#
 
 
+read -r -p "Do you want to install Fiware On Click? [y/N]" response
+case "$response" in
+    [yY][eE][sS]|[yY])
+        break
+        ;;
+    *)
+        exit
+        ;;
+esac
+
 a=1
 while [ $a -lt 4 ]
 do
