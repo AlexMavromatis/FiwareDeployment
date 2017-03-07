@@ -1,12 +1,12 @@
 #!/bin/sh
 # /*************************************************************************
-# 
+#
 #  University of Bristol Confidential
 #  __________________
-#  
-#                                             
+#
+#
 #  All Rights Reserved.
-# 
+#
 #  NOTICE:  All information contained herein is, and remains
 #  the property of University of Bristol and its suppliers,
 #  if any.  The intellectual and technical concepts contained
@@ -61,7 +61,7 @@ echo "Done"
 # Creating the dependencies for mongodb and orion
 
 echo "Installing epel repo..."
-wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+wget $epel
 sudo rpm -Uvh epel-release-latest-6.noarch.rpm
 
 echo "All done!"
@@ -86,13 +86,13 @@ sleep 2
 
 echo "[mongodb-org-2.6]
 name=MongoDB 2.6 Repository
-baseurl=http://downloads-distro.mongodb.org/repo/redhat/os/x86_64/
+baseurl= $mongo
 gpgcheck=0
 enabled=1" > /etc/yum.repos.d/mongodb.repo
 
 echo "[fiware]
 name=Fiware Repository
-baseurl=http://repositories.lab.fiware.org/repo/rpm/\$releasever
+baseurl= $fiware
 gpgcheck=0
 enabled=1" > /etc/yum.repos.d/fiware.repo
 
@@ -132,9 +132,9 @@ echo "Installing mqtt services..."
 echo "[home_oojah_mqtt]
 name=mqtt (CentOS_CentOS-6)
 type=rpm-md
-baseurl=http://download.opensuse.org/repositories/home:/oojah:/mqtt/CentOS_CentOS-6/
+baseurl= $mosquitto1
 gpgcheck=1
-gpgkey=http://download.opensuse.org/repositories/home:/oojah:/mqtt/CentOS_CentOS-6//repodata/repomd.xml.key
+gpgkey= $mosquitto2
 enabled=1" > /etc/yum.repos.d/mosquitto.repo
 
 sleep 4
@@ -145,7 +145,7 @@ yum clean all
 yum install npm
 sleep 4
 cd /opt
-sudo git clone https://github.com/telefonicaid/iotagent-json.git
+sudo git clone $iotagentRepo
 cd iotagent-json
 npm install
 
@@ -157,7 +157,7 @@ cd ~
 #---------------------------------
 
 echo "Installing Short Term Historic"
-git clone https://github.com/telefonicaid/fiware-sth-comet.git
+git clone $sthRepo
 cd fiware-sth-comet
 npm install
 sleep 3
