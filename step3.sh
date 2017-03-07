@@ -2,13 +2,13 @@
 # And enables the Fiware stack in order all the
 # deamons to run on start up.
 # /*************************************************************************
-# 
+#
 #  University of Bristol Confidential
 #  __________________
-#  
-#                                             
+#
+#
 #  All Rights Reserved.
-# 
+#
 #  NOTICE:  All information contained herein is, and remains
 #  the property of University of Bristol and its suppliers,
 #  if any.  The intellectual and technical concepts contained
@@ -21,7 +21,15 @@
 #  /
 
 # installing supervisor dependencies and then supervisor
-read -p "Do you want to install supervisor? Press enter to continue"
+read -r -p "Do you want to install supervisor? [y/N]" response
+case "$response" in
+    [yY][eE][sS]|[yY])
+        break
+        ;;
+    *)
+        exit
+        ;;
+esac
 yum clean all
 yum install python-setuptools
 easy_install supervisor
@@ -56,7 +64,7 @@ sed -i "27i command=/opt/fiware-sth-comet/bin/sth" /etc/supervisord.conf
 sudo chkconfig supervisord on
 
 while true; do
-    read -p "Supervisor needs to reboot your system do you want to do it now?" yn
+    read -p "Supervisor needs to reboot your system do you want to do it now? [yes/no]" yn
     case $yn in
         [Yy]* ) sudo reboot; break;;
         [Nn]* ) exit;;
