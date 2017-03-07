@@ -39,15 +39,17 @@ while [ $a -lt 4 ]
 do
   case $a in
      1)
-        echo "Setting up the Operating System \n"
+        echo "Setting up the Operating System"
         ;;
      2)
-        echo "Deploying FIWARE stack \n"
+        echo "Deploying FIWARE stack"
         ;;
      3)
         echo "Final steps supervisor is being configured"
         ;;
   esac
-   bash step${a}.sh
+
+   sh step${a}.sh | tee -a Logfile${a}.log
    a=`expr $a + 1`
+
 done
