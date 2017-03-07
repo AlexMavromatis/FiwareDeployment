@@ -1,12 +1,12 @@
 #!/bin/sh
 # /*************************************************************************
-# 
+#
 #  University of Bristol Confidential
 #  __________________
-#  
-#                                             
+#
+#
 #  All Rights Reserved.
-# 
+#
 #  NOTICE:  All information contained herein is, and remains
 #  the property of University of Bristol and its suppliers,
 #  if any.  The intellectual and technical concepts contained
@@ -27,7 +27,7 @@
 a=1
 while [ $a -lt 4 ]
 do
-  case $i in
+  case $a in
      1)
         echo "Setting up the Operating System \n"
         ;;
