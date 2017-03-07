@@ -49,7 +49,7 @@ do
         ;;
   esac
 
-   sh step${a}.sh | tee -a Logfile${a}.log
+   sh step${a}.sh | tee -a Logfile${a}.log   #Running the actual scripts and also creating logfiles to debug
    a=`expr $a + 1`
 
 done
