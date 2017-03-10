@@ -17,11 +17,14 @@
 #  is strictly forbidden unless prior written permission is obtained
 #  from University of Bristol.
 #  /
-# This is a controller file to run all the files in order to deploy fiware IoT stack
+#
+# This is a controller file to run all the scripts in order to deploy fiware IoT stack
 # Also by running this file you will install supervisor to control you Fiware components
-# Finally this will setup your centos machine with all the dependencies needed for fiware
+# Finally this will setup your CentOS machine with all the dependencies required for fiware
 # This file was created by HPN and BIO
+# Author - Alex Mavromatis: a.mavromatis@bristol.ac.uk
 #-------------------------------------#
+
 
 
 read -r -p "Do you want to install Fiware On Click? [y/N]" response
