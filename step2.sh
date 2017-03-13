@@ -1,4 +1,5 @@
 #!/bin/sh
+
 # /*************************************************************************
 #
 #  University of Bristol Confidential
@@ -22,6 +23,27 @@
 # This documents is a property of High Performance Networks Group
 #--------------#
 
+
+## Endpoints
+epel="https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm"
+
+
+mongo="http://downloads-distro.mongodb.org/repo/redhat/os/x86_64/"
+
+
+fiware="http://repositories.lab.fiware.org/repo/rpm/\$releasever"
+
+
+mosquitto1="http://download.opensuse.org/repositories/home:/oojah:/mqtt/CentOS_CentOS-6/"
+
+
+mosquitto2="http://download.opensuse.org/repositories/home:/oojah:/mqtt/CentOS_CentOS-6//repodata/repomd.xml.key"
+
+
+iotagentRepo="https://github.com/telefonicaid/iotagent-json.git"
+
+
+sthRepo="https://github.com/telefonicaid/fiware-sth-comet.git"
 
 
 echo "Welcome to Fiware!!!"

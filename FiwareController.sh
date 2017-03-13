@@ -1,4 +1,5 @@
 #!/bin/sh
+
 # /*************************************************************************
 #
 #  University of Bristol Confidential
@@ -25,7 +26,7 @@
 # Author - Alex Mavromatis: a.mavromatis@bristol.ac.uk
 #-------------------------------------#
 
-
+a=1
 
 read -r -p "Do you want to install Fiware On Click? [y/N]" response
 case "$response" in
@@ -37,7 +38,7 @@ case "$response" in
         ;;
 esac
 
-a=1
+
 while [ $a -lt 4 ]
 do
   case $a in

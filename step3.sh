@@ -20,6 +20,9 @@
 #  from University of Bristol.
 #  /
 
+
+
+
 # installing supervisor dependencies and then supervisor
 read -r -p "Do you want to install supervisor? [y/N]" response
 case "$response" in
@@ -54,6 +57,7 @@ sed -i "3i #description: supervisord" /etc/rc.d/init.d/supervisord
 echo "Initialising supervisor deamons------"
 echo "Iotagent now configured"
 echo "STH now configured"
+
 sed -i "23i [program:iotagent]" /etc/supervisord.conf
 sed -i "24i command=/opt/iotagent-json/bin/iotagent-json &> /var/log/iotAgent&" /etc/supervisord.conf
 sleep 2
