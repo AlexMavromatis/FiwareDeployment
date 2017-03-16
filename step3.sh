@@ -34,7 +34,7 @@ case "$response" in
         ;;
 esac
 yum clean all
-yum install python-setuptools
+yum install -y python-setuptools
 easy_install supervisor
 
 # creating a config file
