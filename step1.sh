@@ -19,6 +19,6 @@
 
 
 echo "Installing packages..."
-yum install $(cat rpm-qa-dump)
+yum install -y $(cat rpm-qa-dump)
 echo "Disabling Selinux \n"
 echo "SELINUX=disabled   SELINUXTYPE=targeted" >  /etc/sysconfig/selinux

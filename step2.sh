@@ -86,7 +86,7 @@ echo "All done!"
 sleep 2
 
 echo "Installing git"
-yum install git
+yum -y install git
 sleep 2
 echo "All done"
 
@@ -95,7 +95,7 @@ echo "Please wait this will take some seconds..."
 sleep 10
 
 echo "Installing curl"
-yum install curl
+yum -y install curl
 sleep 2
 echo "All done"
 
@@ -132,7 +132,7 @@ sleep 10
 echo "Installing OrionContextBroker..."
 yum clean all
 sleep 2
-sudo yum install contextBroker
+sudo yum -y install contextBroker
 /etc/init.d/contextBroker start
 echo "Done"
 
@@ -154,12 +154,12 @@ gpgcheck=1
 gpgkey= $mosquitto2
 enabled=1" > /etc/yum.repos.d/mosquitto.repo
 
-yum install mosquitto
+yum install -y mosquitto
 echo "Mqtt services done..."
 
 yum clean all
 sleep 2
-yum install npm
+yum install -y npm
 cd /opt
 sudo git clone $iotagentRepo
 cd iotagent-json
