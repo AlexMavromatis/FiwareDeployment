@@ -21,6 +21,7 @@
 # This is a shell script for deploying fiware IoT stack in Centos 6.6
 # After running this script all the dependencies and the fiware components must be Installed
 # This documents is a property of High Performance Networks Group
+# Author - Alex Mavromatis: a.mavromatis@bristol.ac.uk
 #--------------#
 
 
