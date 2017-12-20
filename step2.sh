@@ -131,7 +131,7 @@ cd /opt
 sudo git clone https://github.com/telefonicaid/iotagent-json.git
 cd iotagent-json
 npm install
-
+npm install node-sass request@2.81.0
 echo "Iot Agent Installed!!!"
 sleep 5
 cd ~
