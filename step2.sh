@@ -71,6 +71,8 @@ echo "Opening system ports and Initialising iptables for fiware!"
 echo "------------------------"
 sleep 3
 sudo iptables -A INPUT -p tcp --match multiport --dports 0:4041 -j ACCEPT
+iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+iptables -A INPUT -p tcp -m tcp --dport 443 -j ACCEPT
 sudo service iptables save
 sudo service iptables restart
 echo "Done"
