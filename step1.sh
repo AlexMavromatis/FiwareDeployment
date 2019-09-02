@@ -15,7 +15,9 @@
 #  Dissemination of this information or reproduction of this material
 #  is strictly forbidden unless prior written permission is obtained
 #  from University of Bristol.
-#  /
+# This file was created by HPN
+# Author - Alex Mavromatis: a.mavromatis@bristol.ac.uk
+#-------------------------------------#
 
 
 echo "Installing packages..."
