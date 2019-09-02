@@ -22,7 +22,7 @@
 # This is a controller file to run all the scripts in order to deploy fiware IoT stack
 # Also by running this file you will install supervisor to control you Fiware components
 # Finally this will setup your CentOS machine with all the dependencies required for fiware
-# This file was created by HPN and BIO
+# This file was created by HPN
 # Author - Alex Mavromatis: a.mavromatis@bristol.ac.uk
 #-------------------------------------#
 
