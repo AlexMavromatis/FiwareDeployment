@@ -18,10 +18,12 @@
 #  is strictly forbidden unless prior written permission is obtained
 #  from University of Bristol.
 #  /
-# This is a shell script for deploying fiware IoT stack in Centos 6.6
+# This is a shell script for deploying fiware IoT stack in Centos
 # After running this script all the dependencies and the fiware components must be Installed
 # This documents is a property of High Performance Networks Group
-#--------------#
+# This file was created by HPN
+# Author - Alex Mavromatis: a.mavromatis@bristol.ac.uk
+#-------------------------------------#
 
 
 ## Endpoints for easier configuration
